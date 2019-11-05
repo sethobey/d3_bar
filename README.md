@@ -6,6 +6,6 @@ Basic bar chart utilizing D3 and Chroma.js
 3) Added simple transition to y value
 
 Would like to add:
-Tooltips
-Multiple datasets
-Transitions for multiple datasets
+1) Tooltips
+2) Multiple datasets
+3) Transitions for multiple datasets
