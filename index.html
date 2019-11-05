@@ -55,7 +55,7 @@
 	            .attr("class", "bar")
 	            .attr("x", function(d) { return x(d.letter); })
 	            .attr("width", x.bandwidth())
-	            .attr("y", height)
+	            .attr("y", function(d) { return height - margin.bottom })
 	            .attr("height", 0)
 	      	    .attr("fill", function(d) { return colors(colorScale(d.frequency)) })
 	      	    .transition()
