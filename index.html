@@ -46,20 +46,14 @@
 			const colorDomain = d3.extent(data, d => d.frequency);
 			colorScale.domain(colorDomain);
 			
-			var xA = svg.selectAll(".xA")
-				.enter().append("g")
-				.attr("class", "xA")
+			svg.append("g")
 				.attr("class", "x axis")
 				.attr("transform", "translate(0," + height + ")")
-				.call(xAxis)
-				.exit().remove();
+				.call(xAxis);
 			
-			var yA = svg.selectAll(".yA")
-				.enter().append("g")
-				.attr("class", "yA")
+			svg.append("g")
 				.attr("class", "y axis")
-				.call(yAxis)
-				.exit().remove();
+				.call(yAxis);
 			
 			var bars = svg.selectAll(".bar")
 				bars.data(data)
