@@ -63,7 +63,8 @@
 				.attr("height", 0)
 				.attr("fill", function(d) { return colors(colorScale(d.frequency)); })
 				.transition()
-				.attr("height", function(d) { return height + y(d.frequency); })
+				.attr("y", function(d) { return height + y(d.frequency); })
+				.attr("height", function(d) { return y(d.frequency); })
 				.delay(500)
 				.duration(500)
 				.ease(d3.easeExpOut);
