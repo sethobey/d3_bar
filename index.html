@@ -74,8 +74,12 @@
 	
 	update("english.tsv");
 	    
-	d3.select("#english").on("click", update("english.tsv"));
-	d3.select("#spanish").on("click", update("spanish.tsv"));
+	d3.select("#english").on("click", function(){
+		update("english.tsv")
+	});
+	d3.select("#spanish").on("click", function(){
+		update("spanish.tsv")
+	});
     </script>
   </body>
 </html
