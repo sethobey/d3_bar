@@ -1,7 +1,7 @@
 [
-  {"letter":"a","frequency":"20"},
-  {"letter":"b","frequency":"20"},
-  {"letter":"c","frequency":"20"},
-  {"letter":"d","frequency":"20"},
-  {"letter":"e","frequency":"20"}
+  {"letter":"a","frequency":"0.2"},
+  {"letter":"b","frequency":"0.2"},
+  {"letter":"c","frequency":"0.2"},
+  {"letter":"d","frequency":"0.2"},
+  {"letter":"e","frequency":"0.2"}
 ]
