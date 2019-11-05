@@ -45,8 +45,7 @@
 	            .attr("x", function(d) { return x(d.letter); })
 	            .attr("width", x.bandwidth())
 	            .attr("y", function(d) { return y(d.frequency); })
-	            .attr("height", function(d) { return height - y(d.frequency); })
-	      	    .attr("fill", "#52b6ca");
+	            .attr("height", function(d) { return height - y(d.frequency); });
       });
     </script>
   </body>
