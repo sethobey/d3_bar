@@ -6,6 +6,12 @@
       const margin = {top: 20, right: 20, bottom: 40, left: 40},
           width = 900 - margin.left - margin.right,
           height = 500 - margin.top - margin.bottom;
+	    
+      const green = '#b6e86f';
+      const blue = '#52b6ca';
+      const colors = chroma.scale([blue, green]).mode('hsl');
+      const colorScale = d3.scaleLinear()
+      
       const formatPercent = d3.format(".0%");
       const x = d3.scaleBand()
           .rangeRound([0, width], .1);
@@ -39,7 +45,8 @@
 	            .attr("x", function(d) { return x(d.letter); })
 	            .attr("width", x.bandwidth())
 	            .attr("y", function(d) { return y(d.frequency); })
-	            .attr("height", function(d) { return height - y(d.frequency); });
+	            .attr("height", function(d) { return height - y(d.frequency); })
+	      	    .attr("fill", "#52b6ca");
       });
     </script>
   </body>
