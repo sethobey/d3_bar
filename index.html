@@ -23,6 +23,7 @@
       const yAxis = d3.axisLeft()
           .scale(y)
           .tickFormat(formatPercent);
+	    
       const svg = d3.select("body").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
@@ -32,10 +33,14 @@
       d3.tsv("data.tsv").then(function(data) {
           x.domain(data.map(function(d) { return d.letter; }));
        	  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
-          svg.append("g")
+	  
+	  const colorDomain = d3.extent(data, d => d.frequency);
+      	  colorScale.domain(colorDomain);
+          
+	  svg.append("g")
               .attr("class", "x axis")
-	            .attr("transform", "translate(0," + height + ")")
-	            .call(xAxis);
+	      .attr("transform", "translate(0," + height + ")")
+	      .call(xAxis);
           svg.append("g")
               .attr("class", "y axis")
 	            .call(yAxis)
@@ -47,7 +52,7 @@
 	            .attr("width", x.bandwidth())
 	            .attr("y", function(d) { return y(d.frequency); })
 	            .attr("height", function(d) { return height - y(d.frequency); })
-	      	    .attr("fill","#52ca62");
+	      	    .attr("fill", colors(colorScale(d.frequency));
       });
     </script>
   </body>
