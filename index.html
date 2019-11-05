@@ -46,15 +46,15 @@
 			const colorDomain = d3.extent(data, d => d.frequency);
 			colorScale.domain(colorDomain);
 
-			svg.append("g")
-				.attr("class", "x axis")
+			var xAx = svg.append("g")
+				xAx.attr("class", "x axis")
 				.attr("transform", "translate(0," + height + ")")
 				.call(xAxis);
-			svg.append("g")
-				.attr("class", "y axis")
+			var yAx = svg.append("g")
+				yAx.attr("class", "y axis")
 				.call(yAxis);
-			svg.selectAll(".bar")
-				.data(data)
+			var bars = svg.selectAll(".bar")
+				bars.data(data)
 				.enter().append("rect")
 				.attr("class", "bar")
 				.attr("x", function(d) { return x(d.letter); })
@@ -68,7 +68,7 @@
 				.delay(500)
 				.duration(500)
 				.ease(d3.easeExpOut);
-			svg.exit().remove();
+			bars.exit().remove();
 		});
 	};
 	
