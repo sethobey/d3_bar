@@ -49,7 +49,7 @@
 			svg.append("g")
 				.attr("class", "x axis")
 				.attr("transform", "translate(0," + height + ")")
-				.attr(xAxis);
+				.call(xAxis);
 			svg.append("g")
 				.attr("class", "y axis")
 				.call(yAxis);
