@@ -61,7 +61,8 @@
 	      	    .transition()
 	            .attr("height", function(d) { return height - y(d.frequency); })
 	      	    .attr("y", function(d) { return y(d.frequency); })
-	      	    .delay(500);
+	      	    .delay(500)
+	      	    .duration(500);
       });
     </script>
   </body>
