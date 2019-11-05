@@ -50,9 +50,13 @@
 				xAx.attr("class", "x axis")
 				.attr("transform", "translate(0," + height + ")")
 				.call(xAxis);
+			xAx.exit().remove()
+			
 			var yAx = svg.append("g")
 				yAx.attr("class", "y axis")
 				.call(yAxis);
+			yAx.exit().remove()
+			
 			var bars = svg.selectAll(".bar")
 				bars.data(data)
 				.enter().append("rect")
