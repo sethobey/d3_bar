@@ -67,7 +67,8 @@
 	      	    		.attr("y", function(d) { return y(d.frequency); })
 				.delay(500)
 				.duration(500)
-				.ease(d3.easeExpOut);
+				.ease(d3.easeExpOut)
+				.exit().remove();
 		});
 	};
 	
