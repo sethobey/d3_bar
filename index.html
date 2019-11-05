@@ -52,7 +52,7 @@
 	            .attr("width", x.bandwidth())
 	            .attr("y", function(d) { return y(d.frequency); })
 	            .attr("height", function(d) { return height - y(d.frequency); })
-	      	    .attr("fill", colors(colorScale(d.frequency)));
+	      	    .attr("fill", function(d) { return colors(colorScale(d.frequency)) });
       });
     </script>
   </body>
