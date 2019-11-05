@@ -46,6 +46,9 @@
 			const colorDomain = d3.extent(data, d => d.frequency);
 			colorScale.domain(colorDomain);
 			
+			svg.selectAll("g")
+				.exit().remove();
+			
 			svg.append("g")
 				.attr("class", "x axis")
 				.attr("transform", "translate(0," + height + ")")
