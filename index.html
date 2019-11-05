@@ -1,8 +1,8 @@
 <!DOCTYPE html>
   <title>D3 Bar Chart</title>
   <body>
-	  <button>English</button>
-	  <button>Spanish</button>
+	  <button id="english">English</button>
+	  <button id="spanish">Spanish</button>
 	  <br />
     <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.6/chroma.min.js"></script>
@@ -68,6 +68,30 @@
 	      	    .duration(500)
 	      	    .ease(d3.easeExpOut);
       });
+	
+      d3.select("#spanish").on("click", function() {
+      	d3.tsv("spanish.tsv").then(function(data) {
+		x.domain(data.map(function(d) { return d.letter; }))
+		y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+		const colorDomain = d3.extent(data, d => d.frequency);
+      	  	colorScale.domain(colorDomain);
+		svg.selectAll(".bar")
+	            .data(data)
+	            .enter().append("rect")
+	            .attr("class", "bar")
+	            .attr("x", function(d) { return x(d.letter); })
+	            .attr("width", x.bandwidth())
+	            .attr("y", height)
+	            .attr("height", 0)
+	      	    .attr("fill", function(d) { return colors(colorScale(d.frequency)) })
+	      	    .transition()
+	            .attr("height", function(d) { return height - y(d.frequency); })
+	      	    .attr("y", function(d) { return y(d.frequency); })
+	      	    .delay(500)
+	      	    .duration(500)
+	      	    .ease(d3.easeExpOut);
+	})
+      })
     </script>
   </body>
 </html
