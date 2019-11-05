@@ -55,11 +55,12 @@
 	            .attr("class", "bar")
 	            .attr("x", function(d) { return x(d.letter); })
 	            .attr("width", x.bandwidth())
-	            .attr("y", function(d) { return y(d.frequency); })
+	            .attr("y", height)
 	            .attr("height", 0)
 	      	    .attr("fill", function(d) { return colors(colorScale(d.frequency)) })
 	      	    .transition()
 	            .attr("height", function(d) { return height - y(d.frequency); })
+	      	    .attr("y", function(d) { return y(d.frequency); })
 	      	    .delay(500);
       });
     </script>
