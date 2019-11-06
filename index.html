@@ -10,15 +10,9 @@
         const margin = {top: 20, right: 20, bottom: 40, left: 40},
             width = 900 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
-        const red = '#ff0000';
-        const orange = '#ffa500';
-        const yellow = '#ffea00';
-        const green = '#b6e86f';
-        const blue = '#52b6ca';
         const color1 = '#4608ff';
-        const color2 = '#d9ccef';
-        const color3 = '#ad91ff';
-        const colors = chroma.scale([color1, color3]).mode('hsl');
+        const color2 = '#ad91ff';
+        const colors = chroma.scale([color1, color2]).mode('hsl');
         const colorScale = d3.scaleLinear()
         
         const formatPercent = d3.format(".0%");
